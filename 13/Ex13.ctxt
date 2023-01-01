@@ -1,0 +1,31 @@
+#BlueJ class context
+comment0.target=Ex13
+comment0.text=\n\ Write\ a\ description\ of\ class\ Ex13\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Ex13()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Ex13\n
+comment10.params=i\ j\ columnsLength\ rowsLength
+comment10.target=boolean\ isPointValid(int,\ int,\ int,\ int)
+comment11.params=drmTemp\ newI\ newJ\ oldI\ oldJ\ stepsToGetHere
+comment11.target=int\ tryGetPoint(int[][],\ int,\ int,\ int,\ int,\ int)
+comment2.params=n
+comment2.target=int\ alternating(java.lang.String)
+comment2.text=\n\ Method\ calculates\ the\ minimum\ switches\ between\ bits\ in\ string\ to\ make\ it\ alternating\n\ There\ are\ two\ possible\ options\ (010101...\ /\ 1010101....),\ so\ check\ how\ much\ operations\ \n\ are\ needed\ for\ each\ of\ them,\ and\ choose\ the\ loweest\n\ @param\ n\ string\ with\ only\ 0\ and\ 1\ and\ the\ same\ number\ of\ chars\n\ @returns\ the\ minimum\ transitions\n
+comment3.params=idx\ n
+comment3.target=boolean\ isAtTheEndOfString(int,\ java.lang.String)
+comment4.params=a\ low\ high
+comment4.target=int\ f(int[],\ int,\ int)
+comment5.params=a
+comment5.target=int\ what(int[])
+comment5.text=\n\ The\ methods\ looks\ for\ the\ longest\ series\ of\ numbers\ in\ an\ array\ \n\ which\ their\ sum\ returns\ zero\ for\ mod\ 2\n\ Time\ complexity\ -\ Going\ over\ a\ in\ the\ first\ loop\ (O(n))\ to\ calculate\ the\ sum\ o(n),\ \n\ \ if\ even\ than\ finished.\n\ \ If\ not,\ find\ the\ first\ odd\ number\ (because\ odd\ minus\ odd\ is\ even),\ \n\ \ \ \ \ \ which\ requires\ going\ over\ the\ array\ again\ (O(n)).\n\ \ So,\ at\ worst\ case\ O(2*n)\ \=\ O(n).\n\ Memory\ complexity\ -\ Array\ a\ is\ already\ in\ memory,\ so\ O(1).\n\ @param\ a\ array\ of\ natural\ numbers\n\ @return\ longest\ streak\ of\ numbers\ whose\ sum\ divides\ by\ 2\n
+comment6.params=a
+comment6.target=int\ idxOfFirstOddNumber(int[])
+comment7.params=a
+comment7.target=boolean\ isWay(int[])
+comment7.text=\n\ Methods\ finds\ if\ there\ is\ a\ way\ to\ traverse\ all\ points\ in\ the\ array\n\n\ @param\ \ a\ array\ to\ traverse\n\ @return\ \ \ \ if\ it\ can\ be\ traversed\n
+comment8.params=a\ lastIdx\ newIdx\ lengthOfA
+comment8.target=boolean\ isWayPrivate(int[],\ int,\ int,\ int)
+comment9.params=drm\ i\ j
+comment9.target=int\ prince(int[][],\ int,\ int)
+comment9.text=\n\ The\ methods\ calulates\ the\ shortest\ path\ to\ the\ villan.\ \n\n\ @param\ \ drm\ array\ for\ all\ the\ rooftops\ and\ their\ respective\ heights\n\ @param\ \ i\ starting\ point\ X\ for\ the\ good\ guy\n\ @param\ \ j\ starting\ point\ Y\ for\ the\ good\ guy\n\ @return\ \ \ \ the\ number\ of\ tiles\ needed\ to\ be\ passed\ (including\ the\ first\ and\ last)\n
+numComments=12

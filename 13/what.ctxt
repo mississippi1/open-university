@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=what
+comment0.text=\n\ Write\ a\ description\ of\ class\ what\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=what()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ what\n
+comment2.params=a\ low\ high
+comment2.target=int\ f(int[],\ int,\ int)
+comment3.params=a
+comment3.target=int\ what(int[])
+comment3.text=\n\ The\ methods\ looks\ for\ the\ longest\ series\ of\ numbers\ in\ an\ array\ \n\ which\ their\ sum\ returns\ zero\ for\ mod\ 2\n\ Time\ complexity\ -\ Going\ over\ a\ in\ the\ first\ loop\ (O(n)),\ \n\ \ then\ going\ over\ partial\ a\ in\ secnd\ loop\ (O(n)),\n\ \ then\ going\ over\ partial\ of\ the\ partial\ a\ in\ third\ loop\ (O(n))\n\ \ So\ -\ O(n**3)\n\ Memory\ complexity\ -\ Array\ a\ is\ already\ in\ memory,\ so\ only\ for\ c\ and\ temp\ vars\n\ \ So\ -\ O(1)\n\ @param\ a\ array\ of\ natural\ numbers\n\ @return\ longest\ streak\ of\ numbers\ whose\ sum\ divides\ by\ 2\n
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5

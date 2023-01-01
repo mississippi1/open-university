@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=A
+comment1.params=
+comment1.target=A()
+comment2.params=aVal
+comment2.target=A(int)
+comment3.params=n
+comment3.target=boolean\ foo(int)
+comment4.params=obj
+comment4.target=boolean\ equals(java.lang.Object)
+numComments=5

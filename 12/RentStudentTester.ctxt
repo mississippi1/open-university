@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=RentStudentTester
+comment0.text=\n\ Tester\ for\ students\ for\ class\ Rent.\n\ IMPORTENT\:\ This\ tester\ checks\ only\ the\ methods'\ names\ and\ not\ their\ correctness.\ \n\ \n\ @author\ Course\ Stass\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=C
+comment1.params=aVal\ cVal
+comment1.target=C(int,\ int)
+comment2.params=n
+comment2.target=boolean\ foo(int)
+numComments=3

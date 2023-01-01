@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Maman13Tester
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=boolean\ checkWhat()
+comment3.params=
+comment3.target=boolean\ checkAlternating()
+comment4.params=
+comment4.target=boolean\ checkIsWay()
+comment5.params=
+comment5.target=boolean\ checkPrince()
+comment6.params=array1\ array2
+comment6.target=boolean\ compareArrays(int[],\ int[])
+comment7.params=array
+comment7.target=void\ printIntegerArray(int[])
+numComments=8
