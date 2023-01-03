@@ -20,14 +20,14 @@ public class IsWayTest
     {
         int [] a= {2,4,1,6,4,2,4,3,5};
         int [] a1= {4, 5, 1, 4, 4, 0, 0, 1, 5, 5, 1, 4, 3, 2, 3, 5, 4, 2};
-        int [] a2= {3, 2, 0, 4};
-        int [] a3= {2, 2, 1, 4};
+        int [] a2= {5, 2, 3, 5, 4, 4, 2, 3, 5};
+        int [] a3= {5, 4, 3, 4, 2, 2};
         int [] a4= {1,8,1};
         int [] a5= {1,1,9};
         // assertTrue(IsWay.isWay(a));
         Ex13 IsWay = new Ex13();
         // assertTrue(IsWay.isWay(a1));
-        // assertFalse(IsWay.isWay(a2));
+        assertTrue(IsWay.isWay(a2));
         assertTrue(IsWay.isWay(a3));
         assertFalse(IsWay.isWay(a4));
         assertTrue(IsWay.isWay(a5));
