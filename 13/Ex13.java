@@ -100,24 +100,25 @@ public class Ex13
         int [] aTemp = a.clone();
         return isWayPrivate(aTemp, 0, 0, a.length);
     }
-    private static boolean isWayPrivate(int [] a, int lastIdx, int newIdx, int lengthOfA){
-        if (newIdx == lengthOfA){
+    private static boolean isWayPrivate(int [] a, int currentIdx, int steps, int lengthOfA){
+        if (currentIdx + steps == lengthOfA - 1 || currentIdx - steps == lengthOfA - 1){
             return true;
         }
         boolean foundPath = false;
-        int [] reqursiveArray = a.clone();
-        if ((lastIdx + newIdx < lengthOfA && a[lastIdx + newIdx] < lengthOfA) && (a[lastIdx + newIdx] != 0)){
-            newIdx = a[lastIdx + newIdx];
+        int nextIdx;
+        int [] reqursiveArray;
+        if ((currentIdx + steps < lengthOfA && a[currentIdx + steps] < lengthOfA) && (a[currentIdx + steps] != 0)){
+            nextIdx = a[currentIdx + steps];
             reqursiveArray = a.clone();
-            reqursiveArray[lastIdx]= 0;
-            foundPath = isWayPrivate(reqursiveArray, newIdx, a[newIdx], lengthOfA);
+            reqursiveArray[currentIdx]= 0;
+            foundPath = isWayPrivate(reqursiveArray, currentIdx + steps, nextIdx, lengthOfA);
             
         }
-        if ((lastIdx - newIdx > 0) && (a[lastIdx - newIdx] != 0) && a[lastIdx - newIdx] < lengthOfA){
-            newIdx = a[lastIdx - newIdx];
+        if ((currentIdx - steps > 0) && (a[currentIdx - steps] != 0) && a[currentIdx - steps] < lengthOfA){
+            nextIdx = a[currentIdx - steps];
             reqursiveArray = a.clone();
-            reqursiveArray[lastIdx]= 0;
-            foundPath |= isWayPrivate(reqursiveArray, newIdx, a[newIdx], lengthOfA);            
+            reqursiveArray[currentIdx]= 0;
+            foundPath |= isWayPrivate(reqursiveArray, currentIdx - steps, nextIdx, lengthOfA);            
             
         }
         return foundPath;
