@@ -82,7 +82,7 @@ public class Ex13
     private static int idxOfFirstOddNumber(int[] a){
         for (int i = 0 ; i < a.length; i++){
             if ((a[i] % 2 != 0) || (a[a.length-i -1] % 2 != 0)){
-                return a.length - i - 1;
+                return Math.max(a.length - i - 1, i);
             }
         }
         return a.length;
@@ -148,8 +148,6 @@ public class Ex13
                                 i, j, 1)),
                             tryGetPoint(drmTemp, i, j - 1, 
                                 i, j, 1));
-        System.out.println(shortestPath);
-        System.out.println(drm.length * drm[0].length);
         return  shortestPath > drm.length * drm[0].length ? -1 : shortestPath;
         
     }
@@ -161,26 +159,16 @@ public class Ex13
                                     int stepsToGetHere){
         
         if (isPointValid(newI, newJ, drmTemp.length, drmTemp[0].length)){
-            // System.out.println("Out loop - Found path - " + oldI + oldJ + " -> " + newI + newJ + " steps: "+ stepsToGetHere + "height before " + drmTemp[oldI][oldJ]+ "height after " + drmTemp[newI][newJ] +" "+
-               // ( drmTemp[newI][newJ] - drmTemp[oldI][oldJ]) +" "+
-                    // (drmTemp[newI][newJ] - drmTemp[oldI][oldJ]));
             if (drmTemp[newI][newJ] == -1){
-                // System.out.println("Found - " + oldI + oldJ + " -> " + newI + newJ+ " steps: "+ stepsToGetHere+ "height before " + drmTemp[oldI][oldJ]+ "height after " + drmTemp[newI][newJ]);
                 return stepsToGetHere +1 ;
             }
             else if (
                 (drmTemp[newI][newJ] - drmTemp[oldI][oldJ] <= 1) 
                     && (drmTemp[newI][newJ] - drmTemp[oldI][oldJ] >= -2)){
-                        // System.out.println("Before Assigment Found path - " + oldI + oldJ + " -> " + newI + newJ + " steps: "+ stepsToGetHere + "height before " + drmTemp[oldI][oldJ]+ "height after " + drmTemp[newI][newJ] +" "+
-               // ( drmTemp[newI][newJ] - drmTemp[oldI][oldJ]) +" "+
-                    // (drmTemp[newI][newJ] - drmTemp[oldI][oldJ]));
                         int [][] drmTempReqursive = drmTemp.clone();
                         drmTempReqursive[oldI] = drmTemp[oldI].clone();
                         // Used because the array.clone() copies the references to the inner arrays, so we should be copying the actual data 
                         drmTempReqursive[oldI][oldJ] = 999;
-                        // System.out.println("Found path - " + oldI + oldJ + " -> " + newI + newJ + " steps: "+ stepsToGetHere + "height before " + drmTemp[oldI][oldJ]+ "height after " + drmTemp[newI][newJ] +" "+
-               // ( drmTemp[newI][newJ] - drmTemp[oldI][oldJ]) +" "+
-                    // (drmTemp[newI][newJ] - drmTemp[oldI][oldJ]));
                         return Math.min(Math.min(
                             Math.min(tryGetPoint(drmTempReqursive, newI + 1, newJ, 
                                 newI, newJ, stepsToGetHere+1),
@@ -191,9 +179,7 @@ public class Ex13
                             tryGetPoint(drmTempReqursive, newI, newJ - 1, 
                                 newI, newJ, stepsToGetHere+1));
                     }
-        // System.out.println("Not Found - " + oldI + oldJ + " -> " + newI + newJ+ " steps: "+ stepsToGetHere+ "height before " + drmTemp[oldI][oldJ]+ "height after " + drmTemp[newI][newJ]);
         }
-        // System.out.println("Not Found - " + oldI + oldJ + " -> " + newI + newJ+ " steps: "+ stepsToGetHere+ "height before " + drmTemp[oldI][oldJ]+ "height after ");
         return drmTemp.length * drmTemp[0].length + 1;
     }
     
