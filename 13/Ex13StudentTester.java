@@ -68,9 +68,9 @@ public class Ex13StudentTester
         System.out.println("[1,  0]"); 
         System.out.println("[-1,  3]"); 
         System.out.println("i: 0,j: 1"); 
-        int result5=Ex13.prince(drm1,0,1);
-        if (result5==10)
-            System.out.println("Passed, result is 4");
+        int result5= Ex13.prince(drm1,0,1);
+        if (result5==2)
+            System.out.println("Passed, result is 2");
         else
             System.out.println("Failed,  expected: 2   student's result: "+result5);
         System.out.println("----------------------------------------");
