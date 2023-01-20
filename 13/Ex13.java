@@ -1,17 +1,13 @@
 
 /**
- * Write a description of class Ex13 here.
+ * 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @Tomer Peker
+ * @1.2.0
  */
 public class Ex13
 {
     
-
-    /**
-     * Constructor for objects of class Ex13
-     */
     public  Ex13()
     {
 
@@ -20,6 +16,8 @@ public class Ex13
      * Method calculates the minimum switches between bits in string to make it alternating
      * There are two possible options (010101... / 1010101....), so check how much operations 
      * are needed for each of them, and choose the loweest
+     * Time Complexity - We go over the string only once, so O(N)
+     * Space Complexity - We do not initialize any arrays in memory, so O(1)
      * @param n string with only 0 and 1 and the same number of chars
      * @returns the minimum transitions
      */
@@ -58,8 +56,11 @@ public class Ex13
         return res;
     }
     /**
-     * The methods looks for the longest series of numbers in an array 
-     * which their sum returns zero for mod 2
+     * 1.The methods looks for the longest series of numbers in an array 
+     * which their sum is even (returns 0 for mod 2).
+     * 2. Time Complexity - Going over the array to caclucate the sum (O(n)), for every element (O(N)), for every element (O(n)) -> O(N**3)
+     * Memory Complexity - The example did not initialize any new arrays, for O(1)
+     * 3.
      * Time complexity - Going over a in the first loop (O(n)) to calculate the sum o(n), 
      *  if even than finished.
      *  If not, find the first odd number (because odd minus odd is even), 
@@ -98,6 +99,9 @@ public class Ex13
     public static boolean isWay(int [] a)
     {
         int [] aTemp = a.clone();
+        if (a.length == 1){
+            return true;
+        }
         return isWayPrivate(aTemp, 0, 0, a.length);
     }
     private static boolean isWayPrivate(int [] a, int currentIdx, int steps, int lengthOfA){
