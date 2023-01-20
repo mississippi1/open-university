@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.target=C
-comment1.params=aVal\ cVal
-comment1.target=C(int,\ int)
-comment2.params=n
-comment2.target=boolean\ foo(int)
-numComments=3
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=a\ pattern
+comment2.target=boolean\ match(int[],\ int[])
+comment3.params=a\ pattern\ idx\ numberOfMatchesInARow
+comment3.target=boolean\ match(int[],\ int[],\ int,\ int)
+comment4.params=aVal\ patternVal
+comment4.target=boolean\ checkIfValueFromPatternInA(int,\ int)
+numComments=5
