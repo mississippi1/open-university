@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Company
+comment0.text=\n\ Company\ linked\ list\n\n\ @Tomer\ Peker\n\ @1.0.0\n
+comment1.params=
+comment1.target=Company()
+comment1.text=\n\ Constructor\ for\ empty\ Company\n
+comment2.params=name\ car\ pick\ ret
+comment2.target=boolean\ addRent(java.lang.String,\ Car,\ Date,\ Date)
+comment2.text=\n\ Add\ rent\ object\n\n\ @param\ \ name\ name\ of\ rent\n\ @param\ \ car\ Car\ object\n\ @param\ \ pick\ pick\ date\ object\n\ @param\ \ ret\ return\ date\ object\n\ @return\ true\ if\ succeeded,false\ if\ already\ exists\n
+numComments=3

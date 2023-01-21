@@ -45,10 +45,13 @@ public class Ex13
         // Either the number of transitions to 1010... or the opposite for 01010....
         // Add the reminder
     }
-    private static boolean isAtTheEndOfString(int idx, String n){
-        return !(idx > 0 && idx < n.length()-1);
-    }
-    
+    /**
+     * This methods sums the array, copied from the task
+     * @param a array to iterate over
+     * @param low the first index to include in sum
+     * @param high the end of indexes in sum
+     * @return the sum 
+       */
     private static int f(int[] a, int low, int high){
         int res = 0;
         for (int i=low; i <high; i++)
@@ -80,6 +83,11 @@ public class Ex13
         }
         return idxOfFirstOddNumber(a);
     }
+    /**
+     * This method checks for the index of the first odd number 
+     * @param a the arry to iterate over
+     * @return the place of the first odd number
+   */
     private static int idxOfFirstOddNumber(int[] a){
         for (int i = 0 ; i < a.length; i++){
             if ((a[i] % 2 != 0) || (a[a.length-i -1] % 2 != 0)){
@@ -104,6 +112,15 @@ public class Ex13
         }
         return isWayPrivate(aTemp, 0, 0, a.length);
     }
+    /**
+     * Methods calculates recursivly if there is a way to traverse all points in the array 
+     *
+     * @param  a array to traverse
+     * @param  currentIdx the current index of the curser
+     * @param  steps the steps which the curser needs to take
+     * @param  lengthOfA length of the array (passed because there is no need to calculate it again and again each iteration)
+     * @return    if it can be traversed
+     */
     private static boolean isWayPrivate(int [] a, int currentIdx, int steps, int lengthOfA){
         if (currentIdx + steps == lengthOfA - 1 || currentIdx - steps == lengthOfA - 1){
             return true;
@@ -155,10 +172,27 @@ public class Ex13
         return  shortestPath > drm.length * drm[0].length ? -1 : shortestPath;
         
     }
-    
+    /**
+     * Checks if a point can be accessed
+     * @param i the row of the point
+     * @param j the column of the point
+     * @param columnLength the number of columns
+     * @param rowsLength the number of rows
+     * @return is the point valid
+       */
     private static boolean isPointValid(int i, int j, int columnsLength, int rowsLength){
         return (i > -1 && i < columnsLength && j > -1 && j < rowsLength);
     }
+    /**
+     * Recursivly try to go to point and checks if it's the villan's point. If so, return the steps, else return the number of points in all array plus one (to signal that the path is invalid)
+     * @param drmTemp an array of points 
+     * @param newI the row of the new point
+     * @param newJ the column of the new point
+     * @param oldI the row of the old point
+     * @param oldJ the column of the old point
+     * @param stepsToGetHere the number of steps upto here
+     * @return the number of steps 
+       */
     private static int tryGetPoint(int[][] drmTemp, int newI, int newJ, int oldI, int oldJ, 
                                     int stepsToGetHere){
         
