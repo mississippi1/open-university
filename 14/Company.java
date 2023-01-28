@@ -27,7 +27,18 @@ public class Company
      * @return true if succeeded,false if already exists
      */
     public boolean addRent(String name, Car car, Date pick, Date ret){
-        RentNode newRent = new RentNode(new Rent(name, car, pick, ret));
+        Rent newRent = new Rent(name, car, pick, ret);
+        return addRent(newRent);
+    }
+    
+     /**
+     * Add rent object
+     *
+     * @param  rent of car
+     * @return true if succeeded,false if already exists
+     */
+    public boolean addRent(Rent newR){
+        RentNode newRent = new RentNode(newR);
         if (_head == null){
             _head = newRent;
             return true;
@@ -47,6 +58,9 @@ public class Company
                 break;
             }
             currentRentNode = currentRentNode.getNext();
+        }
+        if (currentRentNode.getRent().equals(newRent.getRent())){
+            return false;
         }
         if (currentRentNode.getNext() != null){
             RentNode temp = currentRentNode.getNext();
@@ -68,13 +82,21 @@ public class Company
         if (_head == null){
             return false;
         }
-        RentNode currentRentNode = _head;
+        RentNode temp;
+        if (_head.getRent().getReturnDate().equals(d)){            
+            _head = _head.getNext();
+            return true;
+        }
+        RentNode currentRentNode = _head.getNext();
+        RentNode previousRentNode = _head;
         while (currentRentNode != null){
             if (currentRentNode.getRent().getReturnDate().equals(d)){
-                currentRentNode = new RentNode(currentRentNode.getNext());
+                previousRentNode.setNext(currentRentNode.getNext());
                 return true;
             }
+            previousRentNode = currentRentNode;
             currentRentNode = currentRentNode.getNext();
+            
         }
         return false;
     }
@@ -259,39 +281,12 @@ public class Company
         if (other._head == null){
             return;
         }
-        
-        RentNode currentRentNode = _head;
-        RentNode currentOtherRentNode = other._head;
-        
-        if (isOtherBeforeRentInList(currentRentNode, currentOtherRentNode)){
-                RentNode temp = currentRentNode;
-                _head = currentOtherRentNode;
-                _head.setNext(temp);
-                currentOtherRentNode = currentOtherRentNode.getNext();
-        }
-        
-        
-        RentNode currentRentNodeNext = currentRentNode.getNext();
-        RentNode currentOtherRentNodeNext = currentOtherRentNode.getNext();
-        RentNode temp;
-        RentNode tempOther;
-        while (currentRentNodeNext != null && currentOtherRentNodeNext != null){
-            if (isOtherBeforeRentInList(currentRentNodeNext, currentOtherRentNodeNext)){
-                temp = currentRentNodeNext;
-                tempOther = currentOtherRentNodeNext;
-                currentRentNode.setNext(currentOtherRentNodeNext);
-                currentOtherRentNodeNext.setNext(currentRentNodeNext);
-                currentOtherRentNode = tempOther;
-                
-                currentOtherRentNodeNext = currentOtherRentNode.getNext();
-                currentOtherRentNode = currentOtherRentNode.getNext();
-            }
+        RentNode currentRentNode  = other._head;
+        while (currentRentNode != null){
+            addRent(currentRentNode.getRent());
             currentRentNode = currentRentNode.getNext();
-            currentRentNodeNext = currentRentNode.getNext();
         }
-        if (currentRentNodeNext == null){
-            currentRentNode.setNext(currentOtherRentNode);
-        }
+        
         
     }
     
@@ -311,7 +306,7 @@ public class Company
         while (currentRentNode != null){
             currentRent = currentRentNode.getRent();
             s = s + "\nName:" + currentRent.getName()+ " From:"+ currentRent.getPickDate() 
-                +" To:" + currentRent.getPickDate() + " Type:"+currentRent.getCar().getType()+" Days:"+ currentRent.howManyDays()+" Price:" + currentRent.getPrice();
+                +" To:" + currentRent.getReturnDate() + " Type:"+currentRent.getCar().getType()+" Days:"+ currentRent.howManyDays()+" Price:" + currentRent.getPrice();
             currentRentNode = currentRentNode.getNext();
                 
         }
